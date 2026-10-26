@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         gz-harmonic rapidjson-dev libopencv-dev \
         libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
         libgl1-mesa-dri libglx-mesa0 mesa-utils x11-apps \
-        python3.9 python3.9-venv python3.9-dev \
+        python3.9 python3.9-venv python3.9-dev python3.9-tk \
     && rm -rf /var/lib/apt/lists/*
 
 # ArduPilot's build scripts refuse to run as root

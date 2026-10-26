@@ -35,6 +35,12 @@ Inside the container, start the simulator:
 ~/start_sitl.sh
 ```
 
+For a lightweight run with no Gazebo and no windows (SITL only, built-in physics), add the flag:
+
+```
+~/start_sitl.sh --no-gui
+```
+
 Wait ~30 seconds for it to boot (EKF init, GPS lock, etc).
 
 ## Running examples
@@ -44,6 +50,14 @@ Open a second terminal:
 ```
 docker exec -it dk bash
 python3 01_connect_sitl.py
+```
+
+## Control panel (GUI)
+
+`examples/control_panel.py` is a small Tkinter app: connection string field, Connect / Close Connection, mode buttons (Guided, Stabilize, Loiter, Land, RTL) and Arm. It needs the X display, so start the container with the `DISPLAY` options above, then:
+
+```
+docker exec -it dk python3 control_panel.py
 ```
 
 ## Rebuilding
